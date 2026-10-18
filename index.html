@@ -1,150 +1,32 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gordon Price's CS 499 ePortfolio: professional self-assessment, code review, and work in software engineering, algorithms, and databases.">
-  <meta name="color-scheme" content="light">
-  <title>Gordon Price | CS 499 ePortfolio</title>
-  <style>
-    :root { --ink:#172b3a; --muted:#536573; --accent:#126b60; --paper:#f6f7f5; --line:#dbe2df; --white:#fff; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; scroll-padding-top:24px; }
-    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif; }
-    a { color:var(--accent); text-underline-offset:4px; }
-    a:hover { text-decoration-thickness:2px; }
-    a:focus-visible { outline:3px solid #c98718; outline-offset:5px; border-radius:2px; }
-    .skip { position:fixed; top:12px; left:16px; z-index:5; padding:10px 16px; background:white; transform:translateY(-150%); }
-    .skip:focus { transform:none; }
-    .wrap { width:min(1100px,calc(100% - 48px)); margin-inline:auto; }
-    header { background:var(--ink); color:white; }
-    .header-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; min-height:78px; }
-    .brand { color:white; font-weight:700; letter-spacing:.04em; text-decoration:none; }
-    .header-label { color:#b9ccc9; font-size:.85rem; }
-    .hero { display:grid; grid-template-columns:1.35fr 1fr; gap:72px; padding-block:78px 68px; align-items:center; }
-    .eyebrow { margin:0 0 14px; color:var(--accent); font-size:.78rem; font-weight:750; letter-spacing:.14em; text-transform:uppercase; }
-    h1 { margin:0; font-size:clamp(2.7rem,6vw,4.7rem); line-height:1.07; letter-spacing:-.055em; }
-    .role { margin:18px 0 0; font-size:1.2rem; color:var(--muted); }
-    .intro { max-width:540px; margin:22px 0 28px; color:var(--muted); }
-    .button { display:inline-block; padding:11px 19px; color:white; background:var(--accent); border-radius:5px; font-weight:650; text-decoration:none; }
-    .button:hover { background:#0b5148; }
-    .index { padding:27px 30px; border:1px solid var(--line); border-top:4px solid var(--accent); border-radius:7px; background:var(--white); }
-    .index h2 { margin:0 0 13px; font-size:1.05rem; }
-    .index ol { margin:0; padding-left:24px; }
-    .index li { padding:7px 0 7px 6px; color:var(--muted); font-size:.94rem; }
-    .index a { color:var(--ink); text-decoration:none; }
-    .index a:hover { color:var(--accent); text-decoration:underline; }
-    .notice { display:flex; align-items:baseline; gap:16px; padding:18px 22px; background:#e9f0ec; border-left:3px solid var(--accent); border-radius:3px; font-size:.91rem; }
-    .notice strong { color:#0c534a; white-space:nowrap; }
-    .notice p { margin:0; color:#415f56; }
-    .sections { padding-block:52px 76px; }
-    .portfolio-section { display:grid; grid-template-columns:58px minmax(0,1fr); gap:20px; padding:37px 0; border-bottom:1px solid var(--line); }
-    .portfolio-section:first-child { padding-top:0; }
-    .number { color:var(--accent); font:600 .9rem/1.5 ui-monospace,monospace; padding-top:5px; }
-    .section-head { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 24px; align-items:center; }
-    h2 { margin:0; font-size:clamp(1.28rem,2.5vw,1.7rem); line-height:1.35; letter-spacing:-.025em; }
-    .status { padding:3px 10px; border:1px solid var(--line); border-radius:20px; color:var(--muted); font-size:.74rem; white-space:nowrap; }
-    .description { max-width:740px; color:var(--muted); margin:15px 0 0; }
-    .placeholder { margin:20px 0 0; padding:17px 20px; background:var(--white); border:1px dashed #c5d0ca; border-radius:5px; color:var(--muted); font-size:.9rem; }
-    footer { border-top:1px solid var(--line); background:var(--white); }
-    .footer-inner { display:flex; justify-content:space-between; gap:20px; padding-block:24px; font-size:.84rem; color:var(--muted); }
-    .footer-inner p { margin:0; }
-    @media(max-width:760px) {
-      .wrap { width:calc(100% - 36px); }
-      .header-inner { min-height:70px; }
-      .hero { grid-template-columns:1fr; gap:32px; padding-block:48px 36px; }
-      .index { padding:23px; }
-      .notice { display:block; }
-      .notice p { margin-top:5px; }
-      .portfolio-section { grid-template-columns:30px minmax(0,1fr); gap:12px; padding-block:28px; }
-      .section-head { display:block; }
-      .status { display:inline-block; margin-top:10px; }
-      .footer-inner { flex-direction:column; gap:5px; }
-    }
-    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
-  </style>
-</head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header>
-    <div class="wrap header-inner">
-      <a class="brand" href="#main">GORDON PRICE</a>
-      <span class="header-label">CS 499 · ePortfolio</span>
-    </div>
-  </header>
-  <main id="main" class="wrap">
-    <section class="hero" aria-labelledby="intro-title">
-      <div>
-        <p class="eyebrow">Computer Science · Capstone Portfolio</p>
-        <h1 id="intro-title">Gordon Price</h1>
-        <p class="role">Software Engineering Student</p>
-        <p class="intro">Welcome to my CS 499 ePortfolio. This space brings together my professional self-assessment, code review, and selected coursework across three areas of computer science.</p>
-        <a class="button" href="#self-assessment">Explore the portfolio <span aria-hidden="true">↓</span></a>
-      </div>
-      <nav class="index" aria-label="Portfolio sections">
-        <h2>Inside this portfolio</h2>
-        <ol>
-          <li><a href="#self-assessment">Professional Self-Assessment</a></li>
-          <li><a href="#code-review">Code Review</a></li>
-          <li><a href="#software-engineering">Software Engineering &amp; Design</a></li>
-          <li><a href="#algorithms">Algorithms &amp; Data Structures</a></li>
-          <li><a href="#databases">Databases</a></li>
-        </ol>
-      </nav>
-    </section>
-    <aside class="notice" aria-label="Portfolio status">
-      <strong>Portfolio in progress</strong>
-      <p>The site is set up. Assessment, review, and project materials will be added as the coursework is completed.</p>
-    </aside>
-    <div class="sections">
-      <!-- Replace each placeholder with your own coursework and artifact links. -->
-      <section class="portfolio-section" id="self-assessment" aria-labelledby="self-heading">
-        <span class="number" aria-hidden="true">01</span>
-        <div>
-          <div class="section-head"><h2 id="self-heading">Professional Self-Assessment</h2><span class="status">Coming soon</span></div>
-          <p class="description">A reflection on my development throughout the computer science program, the skills represented in this portfolio, and my professional goals.</p>
-          <p class="placeholder">The completed professional self-assessment will appear here.</p>
-        </div>
-      </section>
-      <section class="portfolio-section" id="code-review" aria-labelledby="review-heading">
-        <span class="number" aria-hidden="true">02</span>
-        <div>
-          <div class="section-head"><h2 id="review-heading">Code Review</h2><span class="status">Coming soon</span></div>
-          <p class="description">A review of the selected artifacts, including the original implementation, opportunities for improvement, and planned enhancements.</p>
-          <p class="placeholder">The code review video and supporting materials will be linked here.</p>
-        </div>
-      </section>
-      <section class="portfolio-section" id="software-engineering" aria-labelledby="design-heading">
-        <span class="number" aria-hidden="true">03</span>
-        <div>
-          <div class="section-head"><h2 id="design-heading">Software Engineering &amp; Design</h2><span class="status">Coming soon</span></div>
-          <p class="description">Selected work focused on software structure, maintainability, testing, and thoughtful design decisions.</p>
-          <p class="placeholder">The original artifact, enhanced version, and enhancement narrative will be added here.</p>
-        </div>
-      </section>
-      <section class="portfolio-section" id="algorithms" aria-labelledby="algorithms-heading">
-        <span class="number" aria-hidden="true">04</span>
-        <div>
-          <div class="section-head"><h2 id="algorithms-heading">Algorithms &amp; Data Structures</h2><span class="status">Coming soon</span></div>
-          <p class="description">Selected work examining problem-solving approaches, data organization, efficiency, and algorithmic trade-offs.</p>
-          <p class="placeholder">The original artifact, enhanced version, and enhancement narrative will be added here.</p>
-        </div>
-      </section>
-      <section class="portfolio-section" id="databases" aria-labelledby="databases-heading">
-        <span class="number" aria-hidden="true">05</span>
-        <div>
-          <div class="section-head"><h2 id="databases-heading">Databases</h2><span class="status">Coming soon</span></div>
-          <p class="description">Selected work focused on data modeling, queries, data integrity, and secure database interaction.</p>
-          <p class="placeholder">The original artifact, enhanced version, and enhancement narrative will be added here.</p>
-        </div>
-      </section>
-    </div>
-  </main>
-  <footer>
-    <div class="wrap footer-inner">
-      <p>Gordon Price · CS 499 ePortfolio</p>
-      <a href="https://github.com/GPricedeveloping/GPricedeveloping.github.io">View portfolio source on GitHub</a>
-    </div>
-  </footer>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Professional Self Assessment | Gordon Price</title><meta name="description" content="Gordon Price's CS 499 computer science ePortfolio, with a professional self-assessment, code review, and three animal-shelter dashboard enhancements.">
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<a class="skip" href="#main">Skip to content</a><header><div class="identity"><a href="index.html">Gordon Price</a><span>Computer Science ePortfolio · CS 499</span></div><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Self-assessment</a><a href="software-design.html">Software design</a><a href="algorithms.html">Algorithms</a><a href="databases.html">Databases</a><a href="code-review.html">Code review</a><a href="downloads.html">Files</a></nav></header>
+<main id="main"><section class="intro"><p class="eyebrow">Gordon Price · Southern New Hampshire University</p><h1>Professional self-assessment</h1><p class="lead">Software engineering, application development, and the work behind a dependable dashboard.</p><p><a href="documents/Professional Self Assessment Gordon Price.docx" class="button">Download the Word self-assessment</a></p></section><article class="reading">
+<p>Gordon Price</p>
+<p>CS 499</p>
+<p>Professor Gudivada</p>
+<p>October 14, 2026</p>
+<h2>Professional Self Assessment</h2>
+<p>This course marks the final step in my journey for my bachelor’s degree in software engineering at Southern New Hampshire University. After I completed my associate degree and started working towards the bachelor’s, I’ve become a lot more interested in how an application’s interface, logic, and the data work together. This portfolio should capture that interest through my animal shelter dashboard. It should also show how I’ve learned to explain my decisions and check whether a change actually does what I was intending.</p>
+<p>I would say that my biggest improvement has been trying to look past at whether a program runs. In the beginning of the program, getting the required output was my biggest concern. Now I’m also starting to think about whether someone else could understand the code, what could happen with bad input, and how I’d check a change without breaking the entire thing. Revisiting this older project made this a lot easier to see the difference.</p>
+<h2>What I learned across the program</h2>
+<p>All my coursework has included databases, application design, mobile &amp; full-stack development, and of course security. Working with SQL and MongoDB has made me aware that data storage choices affect the rest of an application. Application development brings the interface and program logic together, while the security coursework has brought me to think about what could gro wrong instead of only planning for the expected input. I want to keep building applications that are going to be useful to people and still easy to understand for the developers that help maintain them.</p>
+<p>Most of my communication work in this class was outside of the dashboard itself. In my Module Two journal, I went over the code-review checklist covering the structure, documentation, variables, control flow, and defensive programming. I used an outline to organize the recorded review around the already existing program, the problems that I ran into, and the changes that I had planned. That helped me with explaining the reason for my enhancement instead of just simply reading the code out loud.</p>
+<p>The Module Three journal also had me thinking about what belongs in a public portfolio. I discussed ownership, permission, and removing the credentials or any private information before sharing work. The journals afterwards gave me more practice explaining how technical development could affect users and my career. I felt these assignments were important because a developer needs to be able to explain consequences and the trade-offs to people who don’t have any technical background nor understand any of its jargon.</p>
+<h2>Collaboration and communication</h2>
+<p>It should be noted that this dashboard was created by me alone, so it does not serve as proof of my role of leading the development team. However, I can show how I managed to simplify the process of evaluation and transfer of the project. The configuration, access to data, rescue rules, and interface perform distinct functions. The README file helps to understand setup and restrictions of the project, and the tests allow for evaluating the changes from another developer&#x27;s perspective. All of these options provide opportunities for teamwork as no prior understanding of the entire application is needed to make some contribution to its specific part.</p>
+<p>I realized that I should change my approach to communication following the audience. A developer needs information about scoring rules, fields used in the query, and test results. An end-user needs to understand the meaning and limitations of the ranking. The suitability score is based on the course-project rules, and it does not provide any verified prediction on animals&#x27; rescue abilities. Both of these aspects are equally important. These are communication and collaborative skills I am able to show right now.</p>
+<h2>Design and algorithms</h2>
+<p>The software design enhancement separated a notebook-based project into a standalone Dash application. That made it easier to test the rescue rules and data access without putting every responsibility in the interface. CSV mode also lets someone run the dashboard without recreating the original course database environment. The work taught me to preserve useful behavior while changing the structure behind it.</p>
+<p>For algorithms and data structures, I added suitability scoring and a bounded min-heap to choose the top five rescue candidates. I had to think about tied scores, missing values, and what to do when there are fewer than five matches. Selecting the top k candidates takes O(n log k) time for k greater than one, followed by O(k log k) to order the selected results. The heap uses O(k) extra space. That gives me a reason for the data structure beyond simply using something covered in class. I compared the complexity with sorting all N candidates, but I haven&#x27;t claimed a measured speed improvement.</p>
+<h2>Databases and security</h2>
+<p>The database enhancements include the creation of generic read, create, update, and delete functions, including validation and indexing. An interesting thing to notice is that the column animal_id is not unique to this dataset since an animal may have multiple outcomes. Using the MongoDB _id during updates and deletion prevents multiple outcomes from being treated as a single record. Reads were done in a consistent order to ensure that the addition of an index doesn&#x27;t change which tied entries come first.</p>
+<p>The query comparison gave me concrete evidence to discuss. In the 10,000-record sample, each rescue query originally examined all 10,000 documents. With the rescue index, the Water, Mountain, and Disaster queries examined 18, 5, and 4 documents respectively, with the same results in the same order. That shows reduced query work in this test. It doesn&#x27;t show a general speed multiplier, and the index still has storage and maintenance costs.</p>
+<p>Security also became part of how I designed the application. Credentials stay outside the enhanced source code. New and updated values are checked, database errors don&#x27;t expose connection details, writes are disabled by default, and deletion requires confirmation of the specific record ID. These checks reduce mistakes and unsafe input, but they aren&#x27;t a replacement for database permissions or user authentication. A public service would need more access controls. Recognizing that boundary is part of the security mindset I want to keep developing.</p>
+<h2>How the portfolio fits together</h2>
+<p>The source artifact was taken from CS 340. It was used for all three enhancement types since each enhancement is a progression from the earlier one, meaning that the modular design allows for separate ranking tests, and the database use helps to control records and allow selective querying. Original code and milestones starting point is also provided in order to show how the changes have been made. The recorded code review outlines the original plan, and the narration describes what I learned during its execution.</p>
+<p>All the artifacts are used to provide evidence for the five program outcomes: collaboration strategies due to readable modules and a handoff; oral, written, and visual communication due to the review, narrations, and dashboard; algorithm design due to the heap and query compromises, practical software development due to the actual application and testing; and security due to the validation, credentials management, and controlled writes. All my milestone submissions were awarded full points. For the portfolio completion, I made sure that my enhancements were within the scope and the wording and supporting artifacts were consistent.</p>
+<p>My intention is to move on in software engineering and full-stack development. What I am good at is being able to divide a problem into parts, testing behaviors and justifying the choice of my solution. However, I am eager to gain more experience collaborating with other programmers and deploying applications for end users. Here I have an opportunity to start with something that I can talk about a functioning app, changes made and limitations that should be addressed.</p>
+</article><section class="next"><p class="eyebrow">The work</p><h2>One application, three enhancements</h2><ul class="enhancements"><li><span>01</span><div><h3><a href="software-design.html">Software Design and Engineering</a></h3><p>Separate modules for the interface, configuration, rescue rules, and data access. CSV mode makes the project runnable without the original course environment.</p></div></li><li><span>02</span><div><h3><a href="algorithms.html">Algorithms and Data Structures</a></h3><p>A suitability score and a bounded min-heap select the top five rescue candidates, with explicit tie handling and tests for edge cases.</p></div></li><li><span>03</span><div><h3><a href="databases.html">Databases</a></h3><p>Validated record maintenance, confirmed deletion, stable reads, and a measured comparison of indexed rescue queries.</p></div></li></ul><p><a href="code-review.html">Start with the original code review</a> · <a href="downloads.html">Browse all submission files</a></p></section></main><footer><span>Gordon Price · CS 499</span><a href="downloads.html">Documents and source files</a><a href="#main">Back to top</a></footer></body></html>
