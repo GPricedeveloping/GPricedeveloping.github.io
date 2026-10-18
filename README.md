@@ -14,9 +14,9 @@ Intended website: https://gpricedeveloping.github.io/
 - Algorithms & Data Structures
 - Databases
 
-Coursework sections are clearly marked as coming soon. Replace the placeholders
-with the actual self-assessment, code review, artifacts, and enhancement narratives.
-The starter page is not a completed capstone submission.
+The portfolio includes the professional self-assessment, code review link, original
+and enhanced artifacts, and three milestone narratives. The code-review recording
+is shared privately with my instructor.
 
 ## Publishing
 
