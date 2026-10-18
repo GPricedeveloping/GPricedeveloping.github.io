@@ -1,0 +1,7 @@
+dash>=2.17,<4
+dash-leaflet>=1.0,<2
+pandas>=2.0,<3
+plotly>=5.0,<7
+pymongo>=4.6,<5
+python-dotenv>=1.0,<2
+pytest>=8,<9
