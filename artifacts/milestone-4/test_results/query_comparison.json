@@ -1,0 +1,104 @@
+{
+  "tested_at_utc": "2026-10-03T20:54:58.657212+00:00",
+  "mongodb_version": "8.2.5",
+  "database": "cs499_m4_benchmark_1355bd95e448483f84f0397e009a68cb",
+  "records": 10000,
+  "duplicate_animal_ids": 140,
+  "indexes": [
+    "animal_id_lookup",
+    "rescue_lookup"
+  ],
+  "index_build_ms": 46.263,
+  "index_sizes_bytes": {
+    "_id_": 4096,
+    "animal_id_lookup": 139264,
+    "rescue_lookup": 237568
+  },
+  "same_results_and_order": true,
+  "before": {
+    "water": {
+      "returned": 18,
+      "documents_examined": 10000,
+      "keys_examined": 10000,
+      "execution_time_ms": 8,
+      "stages": [
+        "FETCH",
+        "IXSCAN"
+      ],
+      "index_names": [
+        "_id_"
+      ]
+    },
+    "mountain": {
+      "returned": 5,
+      "documents_examined": 10000,
+      "keys_examined": 10000,
+      "execution_time_ms": 8,
+      "stages": [
+        "FETCH",
+        "IXSCAN"
+      ],
+      "index_names": [
+        "_id_"
+      ]
+    },
+    "disaster": {
+      "returned": 4,
+      "documents_examined": 10000,
+      "keys_examined": 10000,
+      "execution_time_ms": 8,
+      "stages": [
+        "FETCH",
+        "IXSCAN"
+      ],
+      "index_names": [
+        "_id_"
+      ]
+    }
+  },
+  "after": {
+    "water": {
+      "returned": 18,
+      "documents_examined": 18,
+      "keys_examined": 23,
+      "execution_time_ms": 4,
+      "stages": [
+        "FETCH",
+        "IXSCAN",
+        "SORT"
+      ],
+      "index_names": [
+        "rescue_lookup"
+      ]
+    },
+    "mountain": {
+      "returned": 5,
+      "documents_examined": 5,
+      "keys_examined": 12,
+      "execution_time_ms": 0,
+      "stages": [
+        "FETCH",
+        "IXSCAN",
+        "SORT"
+      ],
+      "index_names": [
+        "rescue_lookup"
+      ]
+    },
+    "disaster": {
+      "returned": 4,
+      "documents_examined": 4,
+      "keys_examined": 10,
+      "execution_time_ms": 0,
+      "stages": [
+        "FETCH",
+        "IXSCAN",
+        "SORT"
+      ],
+      "index_names": [
+        "rescue_lookup"
+      ]
+    }
+  },
+  "notes": "Fresh copy of the included CSV; no forced index hints. Explain timings are single observations, not a latency benchmark. Database retained for inspection."
+}

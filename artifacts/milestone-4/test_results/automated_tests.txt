@@ -1,0 +1,13 @@
+Original Milestone Three
+....................                                                     [100%]
+20 passed, 4 warnings in 0.58s
+
+Enhanced without live MongoDB
+......................ssssssss.......................................... [ 91%]
+.......                                                                  [100%]
+71 passed, 8 skipped, 6 warnings in 0.75s
+
+Enhanced with live MongoDB
+........................................................................ [ 91%]
+.......                                                                  [100%]
+79 passed, 14 warnings in 1.28s

@@ -1,0 +1,46 @@
+CS 499 Milestone Four
+Gordon Price
+October 3, 2026
+
+Environment
+Python 3.14.3, PyMongo 4.18.1, MongoDB 8.2.5, Dash 3.4.0.
+MongoDB testing used a separate loopback-only server and copied sample data.
+The existing AAC database was not used or changed.
+
+Automated checks
+The preserved Milestone Three version has 20 tests.
+The enhanced suite has 79 tests, including eight live MongoDB tests.
+The packaged test output records the final run.
+
+Database checks
+Create, read, update, and confirmed delete passed against MongoDB.
+Canceling a delete left the record intact.
+Invalid updates left the stored data unchanged.
+Two outcomes with the same animal ID remained separate during updates and deletes.
+Creating indexes twice was safe, and tied rankings kept their order.
+Database failures were converted to messages without connection details.
+
+Query comparison
+The sample contains 10,000 records and 140 repeated animal-ID occurrences.
+Before adding the rescue index, each query examined 10,000 documents using the
+existing _id index for ordering. Afterward, the rescue_lookup index reduced
+documents examined to 18 (Water), 5 (Mountain), and 4 (Disaster).
+Results and their order were identical before and after indexing.
+The indexed plans still sorted the small matching result sets by _id.
+Full counters, index sizes, and single-run explain timings are recorded in
+query_comparison.json. The timings do not establish a general latency claim.
+
+Browser checks with the imported MongoDB sample
+Reset: table loaded the sample; ranking section cleared.
+Water: 18 matches; top 5 displayed.
+Mountain: 5 matches; top 5 displayed.
+Disaster: 4 matches; top 4 displayed.
+A native table filter for A702745 showed Abigail, changed the chart to 100%
+Labrador Retriever Mix, and displayed Abigail in the map popup.
+
+Scope and limitations
+The dashboard remains read-only; record maintenance is through manage_records.py.
+CSV mode remains available without a running database.
+Validation is enforced by this repository, not a server-side schema or user login.
+Index storage and build-time observations are included; write overhead was not benchmarked.
+Dash's DataTable deprecation warning is from the existing dependency, not a failed test.
